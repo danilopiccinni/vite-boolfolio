@@ -1,0 +1,130 @@
+<script>
+
+    export default {
+        name: 'Footer',
+
+        data() {
+            return {
+
+            }
+        }
+    }
+
+</script>
+
+<template>
+<img class="wave-footer" src="../../public/img/wave.svg" alt="">
+<div class="footer-container">
+    <div class="container">
+
+        <div class="footer-sx">
+            <h3>Contatti</h3>
+            <span>Vuoi realizzare un sito? Richiedi un preventivo</span>
+            <strong>Danilo Piccinni</strong>
+            <a href="">danilopiccinni@gmail.com</a>
+            <span>P. IVA 254661564843</span>
+        </div>
+
+        <div class="footer-dx">
+            <div class="info">
+                <h3>Info</h3>
+                <ul>
+                    <li><a href="">home</a></li>
+                    <li><a href="">bio & mission</a></li>
+                    <li><a href="">portfolio progetti</a></li>
+                    <li><a href="">richiedi preventivo</a></li>
+                    <li><a href="">contatti</a></li>
+                    <li><a href="">blog</a></li>
+                </ul>
+            </div>
+            <div class="servizi">
+                <h3>Servizi</h3>
+                <ul>
+                    <li><a href="">gestione e servizi web</a></li>
+                    <li><a href="">rivendicazione scheda attività su google</a></li>
+                    <li><a href="">siti onepage e landing page</a></li>
+                </ul>
+            </div>
+            <div class="realizazzioni">
+                <h3>Realizazzioni</h3>
+                <ul>
+                    <li><a href="">siti web per ristoranti e bar</a></li>
+                    <li><a href="">siti web per hotel e b&b</a></li>
+                    <li><a href="">siti web per negozi e attività commerciali</a></li>
+                    <li><a href="">siti web e-commerce per vendere online</a></li>
+                    <li><a href="">siti web per aziende e startup</a></li>
+                    <li><a href="">siti web per liberi professionisti</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<style scoped lang="scss">
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+    color: #a4a4a4;;
+    background-color: #11111f;
+
+    .container{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        .footer-sx {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+
+            h3 {
+                color: white;
+            }
+        }
+
+        .footer-dx{
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+
+            h3 {
+                color: white;
+            }
+
+            ul{
+                list-style-type: none;
+                padding-left: 0;
+
+                li{
+
+                    a {
+                        color: #a4a4a4;
+                        text-decoration: none;
+
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+.wave-footer {
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 50px;
+}
+
+
+</style>

@@ -4,7 +4,7 @@ import AppProjectCard from './ProjectCard.vue';
 import axios from 'axios';
 
 export default {
-    name: 'Main',
+    name: 'Projects',
 
     data() {
         return{
@@ -65,7 +65,7 @@ export default {
 
 <template>
 
-    <div>
+    <div class="container">
         <div class="row">
             <div v-for="project in projects" class="col-3 mb-3">
                 <AppProjectCard  :project="project"></AppProjectCard>

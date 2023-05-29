@@ -1,6 +1,10 @@
 <script>
 
-import AppMain from './components/Main.vue'
+import Projects from './components/Projects.vue';
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import InfoForm from './components/infoForm.vue';
+import Home from './components/Home.vue';
 
 export default {
   name: 'App',
@@ -12,7 +16,11 @@ export default {
   },
 
   components : {
-    AppMain,
+    Projects,
+    Header,
+    Footer,
+    InfoForm,
+    Home,
   }, 
 
   
@@ -21,13 +29,20 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+
+
+    <Header></Header>
+
+    <Home></Home>
 
     <h1>Progetti</h1>
 
-    <AppMain></AppMain>
+    <Projects></Projects>
+
+    <InfoForm></InfoForm>
     
-  </div>
+    <Footer></Footer>
+
 </template>
 
 <style scoped>
