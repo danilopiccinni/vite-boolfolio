@@ -13,7 +13,7 @@ export default {
 
             page : 1,
 
-            totalPage : 0,
+            totalPages : 0,
 
         }
     },
@@ -30,13 +30,13 @@ export default {
         getProjects() {
             axios.get('http://127.0.0.1:8000/api/projects/?page=' + this.page).then( response => {
                 console.log(response.data)
-                this.totalPage = response.data.results.last_page
+                this.totalPages = response.data.results.last_page
                 this.projects = response.data.results.data
             })
         },
 
         nextPage() {
-            if(this.page == this.totalPage) {
+            if(this.page == this.totalPages) {
                 this.page = 1
                 this.getProjects()
             } else {
@@ -47,12 +47,17 @@ export default {
 
         prevPage() {
             if(this.page == 1) {
-                this.page = this.totalPage
+                this.page = this.totalPages
                 this.getProjects()
             } else {
                 this.page--
                 this.getProjects()
             }
+        },
+
+        goToPage(page) {
+            this.page = page
+            this.getProjects()  
         }
     }
 }
@@ -69,6 +74,7 @@ export default {
 
         <div class="d-flex justify-content-center gap-5">
             <button @click="prevPage()" class="btn btn-secondary"> indietro </button>
+            <button v-for="page in totalPages" @click="goToPage(page)" class="btn btn-secondary"> {{ page }}</button>
             <button @click="nextPage()" class="btn btn-secondary"> avanti </button>
         </div>
     </div>
