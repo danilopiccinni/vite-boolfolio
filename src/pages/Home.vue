@@ -1,10 +1,14 @@
 <script>
 
+import 'animate.css';
+
 export default {
     name :'Home',
   data() {
     return {
       activeImage: 1,
+
+      animationOn: false,
 
     };
   },
@@ -91,10 +95,10 @@ export default {
 </section>
 
 
-<section class="section-full-screen">
+<section class="section-full-screen" @mouseover="animationOn=true" @mouseleave="animationOn=false">
 
-    <div class="d-flex">
-        <div class="col-4 column-1 column">
+    <div class="d-flex justify-content-center">
+        <div class="col-4 column-1 column d-none d-lg-block">
             <img src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ" class="img-fluid" alt="...">
         </div>
         <div class="column-2 col-4 text-end column">
@@ -104,26 +108,23 @@ export default {
             <div class="cont-list">
                 <ul >
     
-                    <li class="animate__animated animate__fadeInDownBig animate__delay-2s">
+                    <li :class="animationOn==true ? 'animate__animated animate__fadeInDownBig': ''">
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span>un po di testo per prendere misure</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInDown animate__delay-2s">
+                    <li :class="animationOn==true ? 'animate__animated animate__fadeInDown': '' ">
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span>un po di testo per prendere misure</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    <li :class="animationOn==true ? 'animate__animated animate__fadeInLeft': '' ">
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span>un po di testo per prendere misure</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInUp animate__delay-2s">
+                    <li :class="animationOn==true ? 'animate__animated animate__fadeInUp': '' ">
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span>un po di testo per prendere misure</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInUpBig animate__delay-2s">
-                        <span>UN TITOLO IN GRASSETTO </span>
-                        <span>un po di testo per prendere misure</span> 
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -131,24 +132,24 @@ export default {
             <div>
                 <h3>Perche scegliermi</h3>
             </div>
-            <div class="cont-list">
-                <ul class="animate__animated animate__fadeInRight animate__delay-2s" >
-                    <li class="animate__animated animate__fadeInLeft animate__delay-2s">
+            <div class="cont-list" >
+                <ul  :class="animationOn==true ? 'animate__animated animate__fadeInRight ' : ''"  >
+                    <li :class="animationOn==true ? 'animate__animated animate__fadeInLeft ' : ''" class="animate__animated animate__fadeInLeft">
                         <strong>1</strong>
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span> elit. Odit, ea. Quidem voluptatem nesciunt porro molestias illum, accusamus quibusdam minus eos beatae architecto in doloremque dolorem fuga distinctio quisquam adipisci reprehenderit.</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    <li class="animate__animated animate__fadeInLeft">
                         <strong>2</strong>
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span> elit. Odit, ea. Quidem voluptatem nesciunt porro molestias illum, accusamus quibusdam minus eos beatae architecto in doloremque dolorem fuga distinctio quisquam adipisci reprehenderit.</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    <li class="animate__animated animate__fadeInLeft">
                         <strong>3</strong>
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span>. Odit, ea. Quidem voluptatem nesciunt porro molestias illum, accusamus quibusdam minus eos beatae architecto in doloremque dolorem fuga distinctio quisquam adipisci reprehenderit.</span> 
                     </li>
-                    <li class="animate__animated animate__fadeInLeft animate__delay-2s">
+                    <li class="animate__animated animate__fadeInLeft">
                         <strong>4</strong>
                         <span>UN TITOLO IN GRASSETTO </span>
                         <span> elit. Odit, ea. Quidem voluptatem nesciunt porro molestias illum, accusamus quibusdam minus eos beatae architecto in doloremque dolorem fuga distinctio quisquam adipisci reprehenderit.</span> 
@@ -431,5 +432,8 @@ export default {
 }
 
 // /section cards
+
+
+
 
 </style>
