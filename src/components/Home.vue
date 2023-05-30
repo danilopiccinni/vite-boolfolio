@@ -7,15 +7,10 @@ export default {
     };
   },
   mounted() {
-    setInterval(this.nextImage, 5000);
+
   },
   methods: {
-    nextImage() {
-      this.activeImage++;
-      if (this.activeImage > 3) {
-        this.activeImage = 1;
-      }
-    }
+
   }
 };
 </script>
@@ -29,13 +24,13 @@ export default {
             <div class="carousel carousel-image">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-1" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item" :class="activeImage == 1 ? 'active' : ''">
+                        <div class="carousel-item active" >
                             <img src="https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item" :class="activeImage == 2 ? 'active' : ''">
+                        <div class="carousel-item" >
                             <img src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item" :class="activeImage == 3 ? 'active' : ''">
+                        <div class="carousel-item" >
                             <img src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ" class="d-block w-100" alt="...">
                         </div>
                     </div>
@@ -47,7 +42,7 @@ export default {
             <div class="carousel animate__animated animate__fadeInRight animate__delay-2s">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                    <div class="carousel-item" :class="activeImage == 1 ? 'active' : ''">
+                    <div class="carousel-item active">
                         <div class="text d-block w-100">
                             <h3>CREAZIONE SITI WEB PER QUALUNQUE ATTIVITA'</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt fuga a laudantium. Facilis placeat harum quis, temporibus omnis molestiae earum recusandae labore distinctio unde, commodi culpa voluptatibus voluptatum asperiores aut.
@@ -55,7 +50,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="carousel-item" :class="activeImage == 2 ? 'active' : ''">
+                    <div class="carousel-item">
                         <div class="text d-block w-100">
                             <h3>CONSULENZA E ANALISI TECNICA SITO WEB</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia non cumque minus quas libero culpa facere ab veniam omnis quaerat, illo fuga incidunt possimus accusamus corporis dolorum officiis officia consequatur!
@@ -63,7 +58,7 @@ export default {
                             </p>
                         </div>
                     </div>
-                    <div class="carousel-item" :class="activeImage == 3 ? 'active' : ''">
+                    <div class="carousel-item">
                         <div class="text d-block w-100">
                             <h3>CREAZIONE LOGHI ED ELEMENTI GRAFICI PER I SOCIAL</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, hic ut. Officiis beatae tenetur, magni, ducimus sit quam et hic officia harum molestiae, tempora odit aperiam distinctio est. Provident, magnam!
