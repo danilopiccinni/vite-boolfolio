@@ -1,11 +1,27 @@
 <script>
 
+import { store } from '../store';
+
     export default {
         name: 'Header',
 
         data() {
             return {
 
+                navLinks : [
+                    'Home',
+                    'Portfolio',
+                    'Contatto',
+                ],
+
+                store,
+            }
+        },
+
+        methods : {
+            changePageIndex(index) {
+
+                this.store.pageIndex = index;
             }
         }
     }
@@ -28,14 +44,8 @@
         </div>
         <div class="nav-dx">
             <ul class="nav-links mb-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="">Home</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Contatto</a>
+                <li v-for="(link,index) in navLinks" class="nav-item" :class="store.pageIndex == index ? 'active' : ''">
+                    <a class="nav-link" @click="changePageIndex(index)">{{ link }}</a>
                 </li>
             </ul>
 

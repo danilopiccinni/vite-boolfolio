@@ -6,12 +6,14 @@ import Footer from './components/Footer.vue';
 import InfoForm from './components/infoForm.vue';
 import Home from './components/Home.vue';
 
+import { store } from '../src/store';
+
 export default {
   name: 'App',
 
   data() {
     return {
-
+      store,
     }
   },
 
@@ -33,11 +35,9 @@ export default {
 
     <Header></Header>
 
-    <Home></Home>
+    <Home v-if="store.pageIndex == 0"></Home>
 
-    <h1>Progetti</h1>
-
-    <Projects></Projects>
+    <Projects v-if="store.pageIndex == 1"></Projects>
 
     <InfoForm></InfoForm>
     
