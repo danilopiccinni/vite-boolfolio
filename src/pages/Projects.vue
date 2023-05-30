@@ -9,11 +9,11 @@ export default {
     data() {
         return{
 
+            baseUrl: 'http://127.0.0.1:8000/api/projects/',
+
             projects : [],
 
-            page : 1,
-
-            totalPages : 0,
+            pagination: {},
 
             isLoading: false,
 
@@ -25,45 +25,21 @@ export default {
     },
 
     created() {
-        this.getProjects();
+        this.getProjects(this.baseUrl);
     },
 
     methods: {
-        getProjects() {
+        getProjects(url) {
             this.isLoading = true
-            axios.get('http://127.0.0.1:8000/api/projects/?page=' + this.page).then( response => {
+            axios.get(url ).then( response => {
                 console.log(response.data)
-                this.totalPages = response.data.results.last_page
+                this.pagination = response.data.results
                 this.projects = response.data.results.data
                 this.isLoading = false
             })
 
         },
 
-        nextPage() {
-            if(this.page == this.totalPages) {
-                this.page = 1
-                this.getProjects()
-            } else {
-                this.page++
-                this.getProjects()
-            }
-        },
-
-        prevPage() {
-            if(this.page == 1) {
-                this.page = this.totalPages
-                this.getProjects()
-            } else {
-                this.page--
-                this.getProjects()
-            }
-        },
-
-        goToPage(page) {
-            this.page = page
-            this.getProjects()  
-        }
     }
 }
 </script>
@@ -82,10 +58,8 @@ export default {
             </div>
         </div>
         
-        <div class="d-flex justify-content-center gap-5">
-            <button @click="prevPage()" class="btn btn-secondary"> indietro </button>
-            <button v-for="page in totalPages" @click="goToPage(page)" class="btn btn-secondary"> {{ page }}</button>
-            <button @click="nextPage()" class="btn btn-secondary"> avanti </button>
+        <div class="d-flex justify-content-center gap-1">
+            <button v-for="link in pagination.links" class="btn" :class="link.active ? 'btn-primary' : 'btn-outline-secondary'" :disabled="link.url == null ? true : false" @click="getProjects(link.url)" v-html="link.label"></button>
         </div>
     </div>
     
