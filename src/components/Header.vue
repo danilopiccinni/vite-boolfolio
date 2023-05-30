@@ -9,9 +9,9 @@ import { store } from '../store';
             return {
 
                 navLinks : [
-                    'Home',
-                    'Portfolio',
-                    'Contatto',
+                    'home',
+                    'projects',
+                    'contact',
                 ],
 
                 store,
@@ -44,9 +44,16 @@ import { store } from '../store';
         </div>
         <div class="nav-dx">
             <ul class="nav-links mb-0">
-                <li v-for="(link,index) in navLinks" class="nav-item" :class="store.pageIndex == index ? 'active' : ''">
-                    <a class="nav-link" @click="changePageIndex(index)">{{ link }}</a>
+                <!-- <li v-for="link in navLinks" class="nav-item" :class="store.pageIndex == index ? 'active' : ''">
+                    <router-link class="nav-link" :to="{ name : '{{link}}' } ">{{ link }}</router-link>
+                </li> -->
+                <li :class="store.pageIndex == 0 ? 'active' : ''">
+                    <router-link class="nav-link" :to="{ name : 'home' } " @click="changePageIndex(0)">Home</router-link>
                 </li>
+                <li :class="store.pageIndex == 1 ? 'active' : ''">
+                    <router-link class="nav-link" :to="{ name : 'projects' }" @click="changePageIndex(1)">Projects</router-link>
+                </li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->

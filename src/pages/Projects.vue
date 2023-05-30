@@ -1,5 +1,5 @@
 <script>
-import AppProjectCard from './ProjectCard.vue';
+import AppProjectCard from '../components/ProjectCard.vue';
 
 import axios from 'axios';
 

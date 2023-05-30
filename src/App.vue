@@ -1,10 +1,10 @@
 <script>
 
-import Projects from './components/Projects.vue';
+// import Projects from './components/Projects.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import InfoForm from './components/infoForm.vue';
-import Home from './components/Home.vue';
+// import Home from './components/Home.vue';
 
 import { store } from '../src/store';
 
@@ -18,11 +18,11 @@ export default {
   },
 
   components : {
-    Projects,
+    // Projects,
     Header,
     Footer,
     InfoForm,
-    Home,
+    // Home,
   }, 
 
   
@@ -35,9 +35,11 @@ export default {
 
     <Header></Header>
 
-    <Home v-if="store.pageIndex == 0"></Home>
+    <router-view></router-view>
 
-    <Projects v-if="store.pageIndex == 1"></Projects>
+    <!-- <Home v-if="store.pageIndex == 0"></Home> -->
+
+    <!-- <Projects v-if="store.pageIndex == 1"></Projects> -->
 
     <InfoForm></InfoForm>
     
