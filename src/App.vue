@@ -1,10 +1,10 @@
 <script>
 
-// import Projects from './components/Projects.vue';
+
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import InfoForm from './components/infoForm.vue';
-// import Home from './components/Home.vue';
+
 
 import { store } from '../src/store';
 
