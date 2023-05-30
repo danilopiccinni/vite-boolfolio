@@ -12,6 +12,7 @@ export default {
 
     };
   },
+
   mounted() {
 
   },
@@ -26,7 +27,7 @@ export default {
 <section class="section-carousel">
     <div class=" d-flex justify-content-center gap-3 py-5">
 
-        <div class="animate__animated animate__fadeInLeft animate__delay-2s">
+        <div class="animate__animated animate__fadeInLeft">
             <div class="carousel carousel-image">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-1" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -45,7 +46,7 @@ export default {
         </div>
 
         <div class="carousel-rignt d-flex flex-column justify-content-center align-items-center">
-            <div class="carousel animate__animated animate__fadeInRight animate__delay-2s">
+            <div class="carousel animate__animated animate__fadeInRight">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
                     <div class="carousel-item active">
