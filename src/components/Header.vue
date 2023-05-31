@@ -18,11 +18,12 @@ import { store } from '../store';
             }
         },
 
-        methods : {
-            changePageIndex(index) {
+        mounted() {
 
-                this.store.pageIndex = index;
-            }
+        },
+
+        methods : {
+
         }
     }
 
@@ -44,7 +45,7 @@ import { store } from '../store';
         </div>
         <div class="nav-dx">
             <ul class="nav-links mb-0">
-                <li v-for="link,index in navLinks" class="nav-item" @click="changePageIndex(index)" :class="store.pageIndex == index ? 'active' : ''">
+                <li v-for="link,index in navLinks" class="nav-item" >
                     <router-link class="nav-link" :to="{ name: link } " >{{link}}</router-link>
                 </li>
             </ul>
@@ -66,6 +67,23 @@ import { store } from '../store';
 </template>
 
 <style scoped lang="scss">
+
+.router-link-active {
+    color: white;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50% 0;
+                        
+
+        height: 10px;
+        width: 60%;
+        background-color: blue;
+    }
+
+}
 
 .nav-container {
     z-index: 10;
@@ -132,20 +150,6 @@ import { store } from '../store';
 
                 position: relative;
 
-                &.active {
-                    a::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        translate: -50% 0;
-                        
-
-                        height: 10px;
-                        width: 60%;
-                        background-color: blue;
-                    }
-                }
 
                 &:hover{
                     background-color: blue;
