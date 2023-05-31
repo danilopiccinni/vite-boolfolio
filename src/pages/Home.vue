@@ -25,9 +25,9 @@ export default {
 <template>
 
 <section class="section-carousel">
-    <div class=" d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 py-5">
+    <div class=" d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 py-5 container">
 
-        <div class="animate__animated animate__fadeInLeft d-flex justify-content-center">
+        <div class="animate__animated animate__fadeInLeft d-flex justify-content-center col-12 col-lg-6 ">
             <div class="carousel carousel-image">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-1" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -45,7 +45,7 @@ export default {
             </div>
         </div>
 
-        <div class="carousel-rignt d-flex flex-column justify-content-center align-items-center">
+        <div class="carousel-rignt d-flex flex-column justify-content-center align-items-center col-12 col-lg-6">
             <div class="carousel animate__animated animate__fadeInRight">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -252,7 +252,7 @@ html {
     }
     
     .carousel{
-        max-width: 500px;
+        // max-width: 500px;
         }
 
 .wave-carousel{
