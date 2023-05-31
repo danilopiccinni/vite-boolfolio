@@ -109,7 +109,7 @@ import { store } from '../store';
 
         <section>
             <div class="container text-center">
-               <!-- <em>Git-Hub link: </em><a href="">{{ project.repo }}</a>   -->
+               <em>Git-Hub link: </em><a href="">{{ project.repo }}</a>  
             </div>
         </section>
 
