@@ -17,6 +17,10 @@ export default {
 
             isLoading: false,
 
+            types : [],
+
+            selectedType: '',
+
         }
     },
 
@@ -34,11 +38,21 @@ export default {
             axios.get(url ).then( response => {
                 console.log(response.data)
                 this.pagination = response.data.results
-                this.projects = response.data.results.data
+                this.projects = response.data.results
+                this.types = response.data.types
                 this.isLoading = false
             })
 
         },
+
+        filterProjects() {
+            this.isLoading = true
+
+            axios.get(this.baseUrl + '?type_id=' + this.selectedType).then(response => {
+                this.projects = response.data.results
+                this.isLoading = false
+            })
+        }
 
     }
 }
@@ -46,17 +60,29 @@ export default {
 
 <template>
 
+    <form @submit.prevent="filterProjects()" action="">
+        <select name="type_id" id="type_id" v-model="selectedType">
+            <option value="">Nessuna</option>
+            <option v-for="singleType in types" :value="singleType.id">{{ singleType.name }}</option>
+        </select>
+        <button class="btn btn-primary">Filtra</button>
+    </form>
+
     <div v-if="isLoading == true" class="text loader">
         <div class="spinner"></div>
         <span>loading.....</span>
     </div>
     
     <div v-if="isLoading == false " class="container">
-        <div class="row">
+        <div v-if="projects" class="row">
             <div v-for="project in projects" class="col-3 mb-3">
                 <AppProjectCard  :project="project"></AppProjectCard>
             </div>
         </div>
+        <div v-else>
+            nessuna corrispondenza
+        </div>
+
         
         <div class="d-flex justify-content-center gap-1">
             <button v-for="link in pagination.links" class="btn" :class="link.active ? 'btn-primary' : 'btn-outline-secondary'" :disabled="link.url == null ? true : false" @click="getProjects(link.url)" v-html="link.label"></button>
