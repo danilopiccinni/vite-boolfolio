@@ -237,6 +237,10 @@ export default {
 
 <style scoped lang="scss">
 
+html {
+    overflow-x: hidden;
+}
+
 // section carousel
 .section-carousel {
     background-color: #11111f;
@@ -271,6 +275,7 @@ export default {
         overflow: hidden;
         img {
             height: 100%;
+            object-fit: cover;
   
         }
     }
