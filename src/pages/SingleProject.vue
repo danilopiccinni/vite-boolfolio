@@ -28,7 +28,12 @@ import { store } from '../store';
 
         computed: {
             projectThumb() {
-                return this.store.baseUrl + 'storage/' + this.project.thumb
+                if(this.project.thumb){
+                    return this.store.baseUrl + 'storage/' + this.project.thumb
+                    
+                } else {
+                    return ''
+                }
             }
         },
 
@@ -36,7 +41,6 @@ import { store } from '../store';
             getProject() {
 
                 axios.get('http://127.0.0.1:8000/api/projects/' + this.slug).then( response => {
-
 
                     this.project = response.data.results
 
@@ -61,6 +65,7 @@ import { store } from '../store';
                     <div class="col-10 offset-1">
                         
                         <div class="container-image" :style="{ backgroundImage: 'url(' + projectThumb + ')' }">
+                            <!-- <img :src="projectThumb" alt=""> -->
 
                             <h1>{{ project.title }}</h1>
                             <div class="opacity"></div>
