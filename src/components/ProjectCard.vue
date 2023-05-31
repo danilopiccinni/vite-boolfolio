@@ -32,6 +32,7 @@ export default {
                     <span v-for="technology in project.technologies" :style="{backgroundColor : technology.color}" class="badge"> {{ technology.name }}</span>
                 </div>
                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                <router-link :to="{name : 'project', params : {slug : project.slug}}">Apri progetto</router-link>
             </div>
         </div>
     </div>
