@@ -60,35 +60,43 @@ export default {
 
 <template>
 
-    <form @submit.prevent="filterProjects()" action="">
-        <select name="type_id" id="type_id" v-model="selectedType">
-            <option value="">Nessuna</option>
-            <option v-for="singleType in types" :value="singleType.id">{{ singleType.name }}</option>
-        </select>
-        <button class="btn btn-primary">Filtra</button>
-    </form>
-
-    <div v-if="isLoading == true" class="text loader">
-        <div class="spinner"></div>
-        <span>loading.....</span>
-    </div>
-    
-    <div v-if="isLoading == false " class="container">
-        <div v-if="projects" class="row">
-            <div v-for="project in projects" class="col-3 mb-3">
-                <AppProjectCard  :project="project"></AppProjectCard>
+    <div>
+        <div class="container mt-5">
+            <h1 class="text-center my-5">Project list</h1>
+            <div class="d-flex justify-content-center my-3">
+                <form class="d-flex gap-2" @submit.prevent="filterProjects()" action="">
+                    <select class="form-select" name="type_id" id="type_id" v-model="selectedType">
+                        <option value="">Nessuna</option>
+                        <option v-for="singleType in types" :value="singleType.id">{{ singleType.name }}</option>
+                    </select>
+                    <button class="btn btn-primary">Filtra</button>
+                </form>
+            </div>
+        
+            <div v-if="isLoading == true" class="text loader">
+                <div class="spinner"></div>
+                <span>loading.....</span>
+            </div>
+            
+            <div v-if="isLoading == false " class="container">
+                <div v-if="projects" class="row">
+                    <div v-for="project in projects" class="col-12 col-md-6 mb-3">
+                        <AppProjectCard  :project="project"></AppProjectCard>
+                    </div>
+                </div>
+                <div v-else>
+                    nessuna corrispondenza
+                </div>
+        
+                
+                <div class="d-flex justify-content-center gap-1">
+                    <button v-for="link in pagination.links" class="btn" :class="link.active ? 'btn-primary' : 'btn-outline-secondary'" :disabled="link.url == null ? true : false" @click="getProjects(link.url)" v-html="link.label"></button>
+                </div>
             </div>
         </div>
-        <div v-else>
-            nessuna corrispondenza
-        </div>
 
-        
-        <div class="d-flex justify-content-center gap-1">
-            <button v-for="link in pagination.links" class="btn" :class="link.active ? 'btn-primary' : 'btn-outline-secondary'" :disabled="link.url == null ? true : false" @click="getProjects(link.url)" v-html="link.label"></button>
-        </div>
     </div>
-    
+
 </template>
 
 <style scoped lang="scss">
