@@ -48,10 +48,10 @@
                     <form action="" method=""> 
                         <div class="cont-input flex-column py-3 gap-1">
                             <div>
-                                <input type="text" name="nome" value="" size="40" aria-invalid="false" placeholder="nome">
+                                <input class="form-control" type="text" name="nome" value="" size="40" aria-invalid="false" placeholder="nome">
                             </div>
                             <div>
-                                <input type="email" name="email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="indirizzo email *">
+                                <input class="form-control" type="email" name="email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="indirizzo email *">
                             </div>
                         </div> 	
                         <div class="col-12 "> 		

@@ -35,11 +35,10 @@ export default {
 
     <Header></Header>
 
-    <router-view></router-view>
 
-    <!-- <Home v-if="store.pageIndex == 0"></Home> -->
-
-    <!-- <Projects v-if="store.pageIndex == 1"></Projects> -->
+    <div class="container-router-view">
+      <router-view></router-view>
+    </div>
 
     <InfoForm></InfoForm>
     
@@ -49,4 +48,7 @@ export default {
 
 <style scoped>
 
+  .container-router-view {
+    padding-top: 100px;
+  }
 </style>

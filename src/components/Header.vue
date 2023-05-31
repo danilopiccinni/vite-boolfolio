@@ -30,7 +30,30 @@ import { store } from '../store';
 </script>
 
 <template>
-<header class="nav-container">
+    <div class="nav-container">
+        <nav class="navbar navbar-expand-lg navbar fixed-top" data-bs-theme="dark">
+            <div class="container-fluid">
+                <router-link :to="{ name: 'home' } " class="navbar-brand" ><img src="../../public/img/dp-logo.png" alt=""></router-link>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item nav-link text-center">
+                    <router-link :to="{ name: 'home' } " class="nav-link">Home</router-link>
+                    </li>
+                    <li class="nav-item nav-link text-center">
+                        <router-link :to="{ name: 'projects' } " class="nav-link">Projects</router-link>
+                    </li>
+                    <li class="nav-item nav-link text-center">
+                        <router-link :to="{ name: 'contact' } " class="nav-link">Contact</router-link>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!-- <header class="nav-container">
     <nav class="container nav-bar">
         <div class="nav-sx">
             <div class="logo">
@@ -50,7 +73,7 @@ import { store } from '../store';
                 </li>
             </ul>
 
-            <!-- Right Side Of Navbar -->
+
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item dropdown">
@@ -63,13 +86,14 @@ import { store } from '../store';
 
         </div>
     </nav>
-</header>
+</header> -->
 </template>
 
 <style scoped lang="scss">
 
 .router-link-active {
     color: white;
+    position: relative;
     &::after {
         content: '';
         position: absolute;
@@ -85,107 +109,109 @@ import { store } from '../store';
 
 }
 
-.nav-container {
-    z-index: 10;
-    position: sticky;
-    top: 0;
-    height: 80px;
+nav {
+
     background-color: #11111f;
-    color: #a4a4a4;
 
-    .nav-bar {
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+
+
+    img{
+        height: 80px;
     }
 
-    .nav-sx{
-        display: flex;
+//     .nav-bar {
+//         height: 100%;
+//         display: flex;
+//         justify-content: space-between;
+//         flex-wrap: wrap;
+//     }
 
-        height: 100%;
-        .logo{
-            height: 100%;
-            img{
-                height: 100%;
-            }
-        }
+//     .nav-sx{
+//         display: flex;
 
-        .near-logo{
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+//         height: 100%;
+//         .logo{
+//             height: 100%;
+//             img{
+//                 height: 100%;
+//             }
+//         }
+
+//         .near-logo{
+//             height: 100%;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
             
-            strong{
-                font-size: 12px;
-            }
-            span {
-                font-size: 10px;
-            }
+//             strong{
+//                 font-size: 12px;
+//             }
+//             span {
+//                 font-size: 10px;
+//             }
 
 
-        }
+//         }
 
-    }
+//     }
 
-    .nav-dx{
-        height: 100%;
-        display: flex;
-        align-items: center;
-        gap: 50px;
+//     .nav-dx{
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         gap: 50px;
 
-        .nav-links {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+//         .nav-links {
+//             height: 100%;
+//             display: flex;
+//             align-items: center;
+//             gap: 15px;
 
-            li{
-                height: 100%;
-                display: flex;
-                align-items: center;
-                list-style-type: none;
-                // transition: 0.2s;
+//             li{
+//                 height: 100%;
+//                 display: flex;
+//                 align-items: center;
+//                 list-style-type: none;
+//                 // transition: 0.2s;
 
-                position: relative;
+//                 position: relative;
 
 
-                &:hover{
-                    background-color: blue;
-                    color: white;
-                    cursor: pointer;
-                }
+//                 &:hover{
+//                     background-color: blue;
+//                     color: white;
+//                     cursor: pointer;
+//                 }
 
-                a{  
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    padding: 0 10px;
-                }
-            }
-        }
+//                 a{  
+//                     display: flex;
+//                     align-items: center;
+//                     height: 100%;
+//                     padding: 0 10px;
+//                 }
+//             }
+//         }
 
-        .dropdown{
-            display: flex;
-            align-items: center;
-            padding: 5 25px;
+//         .dropdown{
+//             display: flex;
+//             align-items: center;
+//             padding: 5 25px;
 
-            .dropdown-toggle{
+//             .dropdown-toggle{
 
-                transition: .3s;
-                &:hover {
-                    color: white;
-                }
+//                 transition: .3s;
+//                 &:hover {
+//                     color: white;
+//                 }
 
-                i{
-                    font-size: 30px;
-                    padding: 5 25px;
-                }
-            }
+//                 i{
+//                     font-size: 30px;
+//                     padding: 5 25px;
+//                 }
+//             }
 
-        }
-    }
+//         }
+//     }
 }
 
 

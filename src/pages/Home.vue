@@ -25,9 +25,9 @@ export default {
 <template>
 
 <section class="section-carousel">
-    <div class=" d-flex justify-content-center gap-3 py-5">
+    <div class=" d-flex-column flex-md-row justify-content-center align-items-center gap-3 py-5">
 
-        <div class="animate__animated animate__fadeInLeft">
+        <div class="animate__animated animate__fadeInLeft d-flex justify-content-center">
             <div class="carousel carousel-image">
                 <div id="carouselExampleAutoplaying" class="carousel slide carousel-1" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -98,11 +98,11 @@ export default {
 
 <section class="section-full-screen" @mouseover="animationOn=true" @mouseleave="animationOn=false">
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center flex-column flex-sm-row">
         <div class="col-4 column-1 column d-none d-lg-block">
             <img src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ" class="img-fluid" alt="...">
         </div>
-        <div class="column-2 col-4 text-end column">
+        <div class="column-2  col-12  col-sm-4 text-end">
             <div>
                 <h3>Di Cosa mi occupo</h3>
             </div>
@@ -129,7 +129,7 @@ export default {
                 </ul>
             </div>
         </div>
-        <div class="column-3 col-4 column">
+        <div class="column-3 col-12 col-sm-4 column">
             <div>
                 <h3>Perche scegliermi</h3>
             </div>
@@ -174,7 +174,7 @@ export default {
 
 <section class="banner">
     <div class="__container">
-        <div class="row">
+        <div class="row ps-5 ps-sm-0">
             <div class="cont-sx col-8">
                 <strong>
                     100% AL
@@ -182,7 +182,7 @@ export default {
                      CASO TUO
                 </strong>
             </div>
-            <div class="cont-dx col-4">
+            <div class="cont-dx col-4 d-none d-sm-block">
                 <strong>Creo per te il sito che fa al caso tuo</strong>
                 <em>Una collaborazione di idee studiate per te insieme a te</em>
                 <span>vuoi saperne di piu?</span>
@@ -205,7 +205,7 @@ export default {
 
     <div class="container">
         <div class="row row-cols-2">
-            <div class="col6 row-cols-2 d-flex flex-wrap gap-3">
+            <div class="col-12 col-md-6 row-cols-2 d-flex flex-wrap gap-3  justify-content-center ">
 
                 <div v-for="index in 6" class="card" style="width: 18rem;">
                     <div class="card-body">
@@ -218,7 +218,7 @@ export default {
                 </div>
 
             </div>
-            <div class="col-4">
+            <div class="col-4 d-none d-sm-block">
                 <div class="sticky">
                     <div class="sticky-top">
                         <span class="title">
@@ -247,7 +247,7 @@ html {
     color:#a4a4a4;
 }
     .carousel-1{
-        border-radius: 3px 3px 3px 50%;
+        border-radius: 5px 5px 5px 50%;
         overflow: hidden;
     }
     
