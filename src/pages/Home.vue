@@ -25,7 +25,7 @@ export default {
 <template>
 
 <section class="section-carousel">
-    <div class=" d-flex-column flex-md-row justify-content-center align-items-center gap-3 py-5">
+    <div class=" d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 py-5">
 
         <div class="animate__animated animate__fadeInLeft d-flex justify-content-center">
             <div class="carousel carousel-image">
