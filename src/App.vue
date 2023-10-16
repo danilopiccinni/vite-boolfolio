@@ -3,7 +3,7 @@
 
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
-import InfoForm from './components/infoForm.vue';
+import InfoForm from './components/InfoForm.vue';
 
 
 import { store } from '../src/store';
