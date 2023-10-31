@@ -73,9 +73,10 @@ export default {
                 </form>
             </div>
         
-            <div v-if="isLoading == true" class="text loader">
+            <div v-if="isLoading == true" class="text loader flex-column">
                 <div class="spinner"></div>
                 <span>loading.....</span>
+                <div>MY-PROJECTS-MANAGEMENT é offline</div>
             </div>
             
             <div v-if="isLoading == false " class="container">
