@@ -1,0 +1,17 @@
+# Configuration for the build process and redirects on Netlify | Configurazione del processo di build e dei reindirizzamenti su Netlify | Konfiguration für den Build-Prozess und die Weiterleitungen auf Netlify
+# This file should be placed in the root directory to enable Netlify to handle Vue Router. It contains the necessary configuration for routing on your website. | Questo file dovrebbe essere collocato nella directory principale al fine di consentire a Netlify di gestire Vue Router. Esso contiene la configurazione necessaria per il routing sul tuo sito web. | Diese Datei sollte im Stammverzeichnis platziert werden, um Netlify die Verwaltung von Vue Router zu ermöglichen. Sie enthält die erforderliche Konfiguration für das Routing auf Ihrer Website
+
+
+[build]
+  # Command to build your Vue.js project | Il comando per generare il tuo progetto Vue.js | Befehl zum Erstellen Ihres Vue.js-Projekts
+  command = "npm run build" 
+
+  # The directory where the files to be published are located | La directory in cui si troveranno i file da distribuire | Das Verzeichnis, in dem sich die zu veröffentlichenden Dateien befinden
+  publish = "dist"         
+
+
+   # Redirects all requests to index.html with HTTP status 200 | Reindirizza tutte le richieste a index.html con stato HTTP 200 | Leitet alle Anfragen auf index.html mit HTTP-Status 200 um
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200            
