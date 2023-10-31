@@ -33,7 +33,7 @@ import { store } from '../store';
     <div class="nav-container">
         <nav class="navbar navbar-expand-lg navbar fixed-top" data-bs-theme="dark">
             <div class="container-fluid">
-                <router-link :to="{ name: 'home' } " class="navbar-brand" ><img src="../../public/img/dp-logo.png" alt=""></router-link>
+                <a class="navbar-brand" ><img src="../../public/img/dp-logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
